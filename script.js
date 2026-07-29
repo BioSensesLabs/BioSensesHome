@@ -39,6 +39,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // EDIT & DELETE UTILITIES FOR POINTS TABLES
+    // ==========================================
+    window.deleteTableRecord = function(buttonElement, tableName) {
+        const row = buttonElement.closest('tr');
+        if (row) {
+            if (confirm(`Are you sure you want to delete this record from ${tableName}?`)) {
+                row.remove();
+                console.log(`Record deleted from ${tableName}`);
+                // If using localStorage or Firebase synchronization, trigger your sync function here
+            }
+        }
+    };
+
+    window.editTableRecord = function(buttonElement, tableName) {
+        const row = buttonElement.closest('tr');
+        if (!row) return;
+
+        const cells = row.querySelectorAll('td:not(:last-child)'); // Exclude action column
+        const isEditing = row.classList.toggle('editing-row');
+
+        if (isEditing) {
+            cells.forEach(cell => {
+                const currentText = cell.textContent.trim();
+                cell.innerHTML = `<input type="text" class="table-edit-input" value="${currentText}">`;
+            });
+            buttonElement.textContent = "Save";
+            buttonElement.className = "btn btn-success btn-sm";
+        } else {
+            cells.forEach(cell => {
+                const input = cell.querySelector('input');
+                if (input) {
+                    cell.textContent = input.value.trim();
+                }
+            });
+            buttonElement.textContent = "Edit";
+            buttonElement.className = "btn btn-outline btn-sm";
+            console.log(`Record updated in ${tableName}`);
+            // If using localStorage or Firebase synchronization, trigger your sync function here
+        }
+    };
+
     // Function to grant access and display dashboard
     function unlockDashboard() {
         sessionStorage.setItem('isLoggedIn', 'true');
