@@ -22,6 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return transDate.toISOString().split('T')[0]; // Returns YYYY-MM-DD format
     };
 
+    // Automatic listener for Earned Points Date -> Expiry Date (+1 Year)
+    const dateInput = document.getElementById('date') || document.getElementById('transaction-date');
+    const expiryInput = document.getElementById('expiry-date') || document.getElementById('points-expiry-date');
+
+    if (dateInput && expiryInput) {
+        dateInput.addEventListener('change', (e) => {
+            const selectedDateValue = e.target.value;
+            if (selectedDateValue) {
+                const transactionDate = new Date(selectedDateValue);
+                if (!isNaN(transactionDate.getTime())) {
+                    transactionDate.setFullYear(transactionDate.getFullYear() + 1);
+                    expiryInput.value = transactionDate.toISOString().split('T')[0];
+                }
+            }
+        });
+    }
+
     // Function to grant access and display dashboard
     function unlockDashboard() {
         sessionStorage.setItem('isLoggedIn', 'true');
