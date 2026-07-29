@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const DEFAULT_USER = "BioSenses";
     const DEFAULT_PASS = "828282";
 
+    // Helper Utility: Automatically calculates loyalty point expiry (Transaction Date + 1 Year)
+    window.calculateExpiryDate = function(transactionDateStr) {
+        const transDate = new Date(transactionDateStr);
+        if (isNaN(transDate.getTime())) return null;
+        // Add 1 year to transaction date
+        transDate.setFullYear(transDate.getFullYear() + 1);
+        return transDate.toISOString().split('T')[0]; // Returns YYYY-MM-DD format
+    };
+
     // Check if already logged in during this session
     if (sessionStorage.getItem('isLoggedIn') === 'true') {
         loginOverlay.style.display = 'none';
