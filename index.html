@@ -10,7 +10,136 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioSenses | Enterprise Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Professional Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
+
+    <!-- Login Overlay Screen -->
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="logo.jpeg" alt="BioSenses Logo" class="brand-logo-img">
+                <h2>BioSenses Portal</h2>
+                <p>Secure Enterprise Gateway</p>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username-input">Username</label>
+                    <input type="text" id="username-input" placeholder="Enter username" required autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="password-input">Password</label>
+                    <input type="password" id="password-input" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign In to Dashboard</button>
+            </form>
+            
+            <p id="error-msg" class="feedback-msg error" style="display: none;">Invalid username or password. Please try again.</p>
+
+            <!-- Change Password Toggle Link -->
+            <div class="auth-footer-link">
+                <a href="#" id="show-change-pwd">Change Password?</a>
+            </div>
+
+            <!-- Change Password Form (Hidden by default) -->
+            <form id="change-pwd-form" style="display: none;" class="slide-down">
+                <h3>Reset Credentials</h3>
+                <div class="input-group">
+                    <label for="cp-username">Current Username</label>
+                    <input type="text" id="cp-username" required>
+                </div>
+                <div class="input-group">
+                    <label for="cp-old-password">Current Password</label>
+                    <input type="password" id="cp-old-password" required>
+                </div>
+                <div class="input-group">
+                    <label for="cp-new-password">New Password</label>
+                    <input type="password" id="cp-new-password" placeholder="At least 4 chars" required>
+                </div>
+                <button type="submit" class="btn btn-success">Update Credentials</button>
+                <p id="cp-msg" class="feedback-msg" style="display: none;"></p>
+                <div class="auth-footer-link">
+                    <a href="#" id="back-to-login">Return to Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Container (Hidden by default) -->
+    <div id="dashboard-content" style="display: none;" class="fade-in">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="brand-wrapper">
+                    <img src="logo.jpeg" alt="BioSenses Logo" class="brand-logo-img-small">
+                    <div>
+                        <h1>Workspace Dashboard</h1>
+                        <p class="subtitle">Centralized Management Console</p>
+                    </div>
+                </div>
+                <button id="logout-btn" class="btn btn-outline">Sign Out</button>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="section-title">
+                <h2>Deployed Services</h2>
+                <p>Select an environment below to launch your applications.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Application 1 Card -->
+                <div class="app-card">
+                    <div class="card-icon blue-gradient">01</div>
+                    <div class="card-body">
+                        <h3>BioSenses Loyalty System</h3>
+                        <p>BioSenses Loyalty system is our B2B and B2C Partnership System.</p>
+                    </div>
+                    <a href="https://biosenseslabs.github.io/BioSensesLoyalty/" target="_blank" class="btn btn-card">Launch Application</a>
+                </div>
+
+                <!-- Application 2 Card -->
+                <div class="app-card">
+                    <div class="card-icon purple-gradient">02</div>
+                    <div class="card-body">
+                        <h3>BioSenses Referral System</h3>
+                        <p>BioSenses Referral System is the application responsible to manage medical labs referral partnership that incluses the scope and pricing list</p>
+                    </div>
+                    <a href="https://biosenseslabs.github.io/Referral-Manager/" target="_blank" class="btn btn-card">Launch Application</a>
+                </div>
+
+                <!-- Application 3 Card -->
+                <div class="app-card">
+                    <div class="card-icon teal-gradient">03</div>
+                    <div class="card-body">
+                        <h3>BioSenses Disposables System</h3>
+                        <p>BioSenses Disposables System is the application responsible to track Disposables inventory and suppliers scope pricing list.</p>
+                    </div>
+                    <a href="https://biosenseslabs.github.io/Disposables-Manager/" target="_blank" class="btn btn-card">Launch Application</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 BioSenses Inc. All rights reserved. Secure Cloud Environment.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
 
     <!-- Login Overlay Screen -->
     <div id="login-overlay" class="login-overlay">
