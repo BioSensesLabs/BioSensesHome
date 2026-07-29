@@ -94,6 +94,13 @@ body {
     text-decoration: none;
 }
 
+.btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    margin-right: 0.35rem;
+}
+
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
     color: white;
@@ -109,7 +116,6 @@ body {
 .btn-success {
     background-color: #028c7d;
     color: white;
-    width: 100%;
 }
 
 .btn-success:hover {
@@ -138,6 +144,20 @@ body {
 .btn-card:hover {
     background-color: var(--accent-cyan);
     color: white;
+}
+
+/* Table Inline Editing Styles */
+.table-edit-input {
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--accent-cyan);
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+tr.editing-row {
+    background-color: #f0f9f9;
 }
 
 /* Login Overlay */
