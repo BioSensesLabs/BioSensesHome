@@ -37,7 +37,7 @@ body {
     animation: fadeIn 0.4s ease forwards;
 }
 
-/* Logo Image Styling */
+/* Logo & Image Styling */
 .brand-logo-img {
     width: 68px;
     height: 68px;
@@ -53,6 +53,30 @@ body {
     object-fit: contain;
     display: block;
     border-radius: 8px;
+}
+
+.card-image-container {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    background-color: #f8fbfb;
+    border: 1px solid var(--surface-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.app-card:hover .card-img {
+    transform: scale(1.04);
 }
 
 /* Buttons */
@@ -307,22 +331,6 @@ body {
     border-color: var(--accent-cyan);
     box-shadow: var(--card-hover-shadow);
 }
-
-.card-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
-}
-
-.blue-gradient { background: rgba(5, 102, 141, 0.1); color: var(--accent-blue); }
-.purple-gradient { background: rgba(0, 168, 150, 0.1); color: var(--accent-cyan); }
-.teal-gradient { background: rgba(2, 140, 125, 0.1); color: #028c7d; }
 
 .card-body h3 {
     font-size: 1.2rem;
