@@ -37,6 +37,24 @@ body {
     animation: fadeIn 0.4s ease forwards;
 }
 
+/* Logo Image Styling */
+.brand-logo-img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border-radius: 12px;
+}
+
+.brand-logo-img-small {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -123,21 +141,6 @@ body {
 .login-header {
     text-align: center;
     margin-bottom: 2rem;
-}
-
-.logo-mark {
-    width: 56px;
-    height: 56px;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    color: white;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    box-shadow: 0 8px 20px rgba(0, 168, 150, 0.3);
 }
 
 .login-header h2 {
@@ -242,19 +245,6 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-}
-
-.logo-mark-small {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    color: white;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-size: 1rem;
 }
 
 .app-header h1 {
