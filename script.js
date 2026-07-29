@@ -47,8 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (row) {
             if (confirm(`Are you sure you want to delete this record from ${tableName}?`)) {
                 row.remove();
-                console.log(`Record deleted from ${tableName}`);
-                // If using localStorage or Firebase synchronization, trigger your sync function here
             }
         }
     };
@@ -76,8 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             buttonElement.textContent = "Edit";
             buttonElement.className = "btn btn-outline btn-sm";
-            console.log(`Record updated in ${tableName}`);
-            // If using localStorage or Firebase synchronization, trigger your sync function here
         }
     };
 
